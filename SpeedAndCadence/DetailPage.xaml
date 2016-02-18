@@ -1,0 +1,68 @@
+﻿<Page x:Class="SpeedAndCadence.DetailPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="using:SpeedAndCadence"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      DataContext="{Binding DetailPageViewModel,
+                            Source={StaticResource Locator}}"
+      mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0"
+                           Grid.Column="0"
+                           Text="Instantaneous Wheel RPM" />
+                <TextBlock Grid.Row="0"
+                           Grid.Column="1"
+                           Text="{Binding InstantaneousWheelRPM}" />
+                <TextBlock Grid.Row="1"
+                           Grid.Column="0"
+                           Text="Instantaneous Crank RPM" />
+                <TextBlock Grid.Row="1"
+                           Grid.Column="1"
+                           Text="{Binding InstantaneousCrankRPM}" />
+                <TextBlock Grid.Row="2"
+                           Grid.Column="0"
+                           Text="Average Wheel RPM" />
+                <TextBlock Grid.Row="2"
+                           Grid.Column="1"
+                           Text="{Binding WheelRPMAverage}" />
+                <TextBlock Grid.Row="3"
+                           Grid.Column="0"
+                           Text="Average Crank RPM" />
+                <TextBlock Grid.Row="3"
+                           Grid.Column="1"
+                           Text="{Binding CrankRPMAverage}" />
+                <TextBlock Grid.Row="4"
+                           Grid.Column="0"
+                           Text="CycleSpeed in kph" />
+                <TextBlock Grid.Row="4"
+                           Grid.Column="1"
+                           Text="{Binding CycleSpeed}" />
+                <TextBlock Grid.Row="5"
+                           Grid.Column="0"
+                           Text="Measurements Received" />
+                <TextBlock Grid.Row="5"
+                           Grid.Column="1"
+                           Text="{Binding MeasurementsReceived}" />
+            </Grid>
+            <TextBlock Text="{Binding ServiceStatus}" />
+            <Button Command="{Binding GoBack}" Content="Go Back" />
+        </StackPanel>
+    </Grid>
+</Page>
