@@ -135,7 +135,7 @@ namespace SpeedAndCadence.Model
             alreadyTriedRePairing = true;
             int retryCount = 0;
 
-            // Save the device name to use when finding the device later...
+            // Get the device's MAC address to use when finding the device later...
             deviceId = getUniqueCode(device.Id);
 
             if (device.Pairing.IsPaired)
