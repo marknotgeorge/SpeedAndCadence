@@ -187,6 +187,9 @@ namespace SpeedAndCadence.Model
 
         private string getUniqueCode(string id)
         {
+            // The device Id has four sections, separated by a # character. The device's unique MAC
+            // address is in the second section.
+
             var segments = id.Split('#');
             return segments[1];
         }
